@@ -24,7 +24,7 @@
                 display: none;
             }
 
-            .Img1 {
+            .Img1Contain {
             position:relative;
             width:100%;
             height:300px;
@@ -89,7 +89,7 @@
                 display: none;
             }
 
-            .Img1 {
+            .Img1Contain {
             position:relative;
             width:100%;
             height:450px;
@@ -235,7 +235,7 @@
         &nbsp; &nbsp;
 
         <a class="Full" href="faq.html">
-            FAQ
+            Renseignements
 
         </a>
 
@@ -267,7 +267,7 @@
             <br />
 
             <a class="Small" href="faq.html">
-                FAQ
+                Renseignements
 
             </a>
 
@@ -301,7 +301,11 @@
 
     <div class="absolute">
 
-        <div><img src="background2.png" class="Img1" /></div>
+        <div class="Img1Contain">
+                <img src="background2.png" class="Img1" style="position: absolute; left: 0px; width: 100%;object-fit: cover;"/>
+            
+            
+        </div>
 
         <div class="main">
             <p1>
@@ -320,8 +324,65 @@
         </div>
 
     </div>
+    
+    <script>
+        startImageTransition();
+ 
+        function startImageTransition() {
+            var images = document.getElementsByClassName("Img1");
+
+            var last = images.length -1;
+            var curr = 0;
+            var top = 0;
+            var bottom = -2;
+
+            for (var i = 0; i < images.length; ++i) {//reset whatever states the images were
+                images[i].style.opacity = 1;
+                images[i].style.zIndex = bottom;
+            }
+
+            images[curr].style.zIndex = top;
+            images[last].style.zIndex = bottom;
+ 
+            setInterval(changeImage, 3000);
+ 
+            function changeImage() {
+                //chooses the next image
+                curr += 1;
+                last += 1;
+                if(images.length -1 < curr) {curr = 0;} // if we have reached the end of the list, go to start
+                if(images.length -1 < last) {last = 0;}
+                
 
 
+                //slowly transition between old image and new image 
+
+                
+                images[last].style.zIndex = top;
+                images[curr].style.zIndex = bottom;
+                images[last].style.opacity = 1;
+
+                var del = 0.01;
+                var id = setInterval(changeOpacity,10)
+
+                function changeOpacity(){
+                    images[last].style.opacity -= del;
+                    if(images[last].style.opacity <= 0){
+                        console.log("Loopdy doop");
+                        images[last].style.zIndex = bottom;
+                        images[curr].style.zIndex = top;
+                        clearInterval(id);  
+                    }
+                }
+                console.log("This should work")
+                
+                images[last].style.opacity = 1;
+                images[curr].style.opacity = 1;
+            }
+ 
+        }
+    </script>
 </body>
+
 
 </html>
