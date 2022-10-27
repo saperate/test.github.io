@@ -19,7 +19,8 @@
             position: absolute; 
             left: 0px; 
             width: 100%;
-            object-fit: cover;
+            height: 100%;
+            object-fit:fill;
             
         }
 
@@ -88,13 +89,30 @@
             }
 
                 
-
+            .articleDescriptionMartham{
+                text-align:justify;
+                width: 85%;
+                display: inline-block; 
+                font-size:140%; 
+                margin-top: 40px;
+            }
                 
 
                 
         }
 
         @media (min-width: 900px) {
+
+            .articleDescriptionMartham{
+                background-color: #888888;
+                text-align:justify;
+                width: 40%;
+                height: 60%;
+                display: inline-block; 
+                font-size:175%; 
+                margin-top: 40px;
+            }
+
             .TextName {
                 display: inline;
             }
@@ -111,7 +129,7 @@
             
             }
 
-
+            
 
             .mobileBar {
                 display: none;
@@ -330,7 +348,10 @@
 
         <div class="main">
             <p1>
-                Bing Bang!! Faites attention et portez vos casques de sécurité car le site web est en construction!
+                <article class="articleDescriptionMartham">
+                    
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis dui, molestie sit amet ipsum at, consequat pellentesque arcu. Fusce ut feugiat metus. Suspendisse in est non quam efficitur faucibus. Suspendisse aliquet leo a elit luctus blandit viverra non nulla. Fusce a tortor et est bibendum laoreet. Donec auctor eu. 
+                </article>
                 <br />
                 Ceci est la page principale
             </p1>
@@ -356,19 +377,21 @@
         function startImageTransition() {
             var images = document.getElementsByClassName("Img1");
 
-            var last = images.length -1;
-            var curr = 0;
+            var last = 0;
+            var curr = 1;
             var top = 0;
             var bottom = -2;
 
             for (var i = 0; i < images.length; ++i) {//reset whatever states the images were
-                images[i].style.opacity = 1;
+                images[i].style.opacity = 0;
                 images[i].style.zIndex = bottom;
             }
 
             images[curr].style.zIndex = top;
             images[last].style.zIndex = bottom;
- 
+            images[curr].style.opacity = 1;
+            images[last].style.opacity = 1;
+
             setInterval(changeImage, 3000);
  
             function changeImage() {
@@ -393,13 +416,11 @@
                 function changeOpacity(){
                     images[last].style.opacity -= del;
                     if(images[last].style.opacity <= 0){
-                        console.log("Loopdy doop");
                         images[last].style.zIndex = bottom;
                         images[curr].style.zIndex = top;
                         clearInterval(id);  
                     }
                 }
-                console.log("This should work")
                 
                 images[last].style.opacity = 1;
                 images[curr].style.opacity = 1;
