@@ -15,7 +15,17 @@
             background: #eaeaea;
         }
 
+        img.Img1{
+            position: absolute; 
+            left: 0px; 
+            width: 100%;
+            object-fit: cover;
+            
+        }
+
         @media (max-width: 900px) {
+
+
             .TextName{
                 display: none;
             }
@@ -25,10 +35,14 @@
             }
 
             .Img1Contain {
-            position:relative;
-            width:100%;
-            height:300px;
-            object-fit: cover;
+                position:relative;
+                width:100%;
+                height:300px;
+                object-fit:cover;
+            }
+            
+            img.Img1{
+                top:60px;
             }
 
             .NavBar {
@@ -92,9 +106,12 @@
             .Img1Contain {
             position:relative;
             width:100%;
-            height:450px;
-            object-fit: cover;
+            height:500px;
+            object-fit:cover;
+            
             }
+
+
 
             .mobileBar {
                 display: none;
@@ -166,7 +183,7 @@
             }
 
             .TopBar a.Active {
-                background-color: #b3a74a;
+                background-color: #b3a64b;
             }
 
             .TopBar a.Red {
@@ -179,7 +196,7 @@
             }
 
             .TopBar a.Active:hover {
-                background-color: #cebd3f;
+                background-color: #bcab32;
                 color: #f2f2f2;
             }
 
@@ -199,6 +216,8 @@
         .mobileBar {
             display: none;
         }
+
+
     </style>
 
     <script>
@@ -302,7 +321,9 @@
     <div class="absolute">
 
         <div class="Img1Contain">
-                <img src="background2.png" class="Img1" style="position: absolute; left: 0px; width: 100%;object-fit: cover;"/>
+            <img src="background1.png" class="Img1"/>
+            <img src="background2.png" class="Img1"/>
+            <img src="background3.png" class="Img1"/>
             
             
         </div>
@@ -326,6 +347,10 @@
     </div>
     
     <script>
+
+
+
+
         startImageTransition();
  
         function startImageTransition() {
