@@ -24,8 +24,17 @@
             
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
 
+            .MarthamSign{
+                top: 35px;
+                font-size: 250%;
+            }
+
+            .MarthamArticle{
+                display: none;
+            }
+            
 
             .TextName{
                 display: none;
@@ -101,17 +110,44 @@
                 
         }
 
-        @media (min-width: 900px) {
+        @media (min-width: 1000px) {
 
-            .articleDescriptionMartham{
+    
+            .MarthamSign{
+                top: -25px;
+                font-size: 300%;
+            }
+
+            .MarthamArticle{
                 background-color: #888888;
                 text-align:justify;
-                width: 40%;
-                height: 60%;
-                display: inline-block; 
-                font-size:175%; 
-                margin-top: 40px;
+                width: 20%;
+                min-height: 30%;
+                max-height: fit-content;
+                font-size:125%; 
             }
+
+            .MA1{
+                display: block;
+            }
+
+            .MA2{
+                display:inline-block
+            }
+
+
+            .MarthamArticle div{
+                text-align: center; 
+                display: block;  
+                background-color: #424242; 
+                width: fit-content; 
+                margin: 0 auto; 
+                margin-top: -25px; 
+                font-size: 150%; 
+                padding-left: 5px; 
+                padding-right: 5px;
+            }
+
 
             .TextName {
                 display: inline;
@@ -147,6 +183,16 @@
         }
 
 
+        .MarthamSign{
+            font-family: Arial; 
+            display:inline-block;
+            margin:0 auto;
+            background-color: #888888;
+            width: 40%;
+            height:fit-content;
+            position: relative;
+            z-index: 1;
+        }
 
         .main p1 {
             font-family: Arial;
@@ -168,6 +214,7 @@
             position: relative;
             bottom: 0px;
             left: 0px;
+            margin-top: 25px;
         }
 
         .LogoBar {
@@ -345,13 +392,36 @@
             
             
         </div>
+        <div class="MarthamSign">
+            Martham
+        </div>
 
         <div class="main">
             <p1>
-                <article class="articleDescriptionMartham">
-                    
+
+                
+
+                <article class="MarthamArticle MA1"  style="margin-left: 80px;float: left;">
+                    <div>
+                        Notre histoire
+                    </div>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis dui, molestie sit amet ipsum at, consequat pellentesque arcu. Fusce ut feugiat metus. Suspendisse in est non quam efficitur faucibus. Suspendisse aliquet leo a elit luctus blandit viverra non nulla. Fusce a tortor et est bibendum laoreet. Donec auctor eu. 
                 </article>
+
+                <article class="MarthamArticle MA2" style="font-size:125%; margin-top: 40px;">
+                    <div>
+                        Nos services
+                    </div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis dui, molestie sit amet ipsum at, consequat pellentesque arcu. Fusce ut feugiat metus. Suspendisse in est non quam efficitur faucibus. Suspendisse aliquet leo a elit luctus blandit viverra non nulla. Fusce a tortor et est bibendum laoreet. Donec auctor eu. 
+                </article>
+
+                <article class="MarthamArticle MA1" style="margin-right: 80px;float:right;">
+                    <div>
+                        Notre mission
+                    </div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis dui, molestie sit amet ipsum at, consequat pellentesque arcu. Fusce ut feugiat metus. Suspendisse in est non quam efficitur faucibus. Suspendisse aliquet leo a elit luctus blandit viverra non nulla. Fusce a tortor et est bibendum laoreet. Donec auctor eu. 
+                </article>
+
                 <br />
                 Ceci est la page principale
             </p1>
